@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rsync -rvtW --include='*.zip' --exclude='*.csv' /home/pi/RaspberryPi-CarPC/TinkerDataLogger/DataLogs/ /mnt/storage/
+rsync -rvtW --include='*.zip' --exclude='*.csv' /home/pi/CarPC/DataLogs/ /mnt/storage/
