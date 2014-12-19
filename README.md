@@ -34,7 +34,7 @@ aus Tinkerforge [GPS](http://www.tinkerforge.com/de/doc/Hardware/Bricklets/GPS.h
 * Systemzeit wird aus GPS Zeit gesetzt
 * dann werden Werte von GPS mit 10Hz und IMU mit 50Hz erfasst
 * und in `.csv` in Ordner `DataLogs/` geschrieben
-* alle alten `.csv` werden zu `.zip` komprimiert
+* `.csv` werden zu `.zip` komprimiert
 * auf `/mnt/storage/` verschoben (Windows Partition)
 
 #### Autostart: Linux Cronjobs
@@ -49,7 +49,16 @@ Diese Cronjobs laufen als Admin (`sudo crontab -e`) auf dem RaspberryPi:
 
 ## MHS CAN-Logger
 
-_Kein Support für [MHS tinyCAN-1XL](http://www.mhs-elektronik.de/index.php?module=content&action=show&page=tinycan_hardware)_
+_Kein Support für [MHS tinyCAN-1XL](http://www.mhs-elektronik.de/index.php?module=content&action=show&page=tinycan_hardware)!_
 
-Beispielcode: `canpi.py` loggt in `CANlog.txt`
+### Requirements
+
+Notwendige Files für Funktion von tinyCAN-1XL Modul (Quelle: MHS Elektronik):
+
+- `libmhstcan.so` (Bibliothek)
+- `mhsTinyCanDriver.py` (Implementierung der CAN-API)
+- `uselogging.py` (Writer für CAN-Log)
+- `utils.py` (Utilities)
+
+Beispielanwendung: `python canpi.py` loggt in `CANlog.txt`
 
